@@ -1,0 +1,25 @@
+domain: turbonomic.io
+layout:
+- go.kubebuilder.io/v3
+projectName: turbo-policy
+repo: github.com/turbonomic/turbo-policy
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: turbonomic.io
+  group: policy
+  kind: SLOHorizontalScale
+  path: github.com/turbonomic/turbo-policy/api/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: turbonomic.io
+  group: policy
+  kind: PolicyBinding
+  path: github.com/turbonomic/turbo-policy/api/v1alpha1
+  version: v1alpha1
+version: "3"

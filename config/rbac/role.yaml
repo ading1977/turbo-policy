@@ -1,0 +1,59 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - policy.turbonomic.io
+  resources:
+  - policybindings
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - policy.turbonomic.io
+  resources:
+  - policybindings/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - policy.turbonomic.io
+  resources:
+  - policybindings/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - policy.turbonomic.io
+  resources:
+  - slohorizontalscales
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - policy.turbonomic.io
+  resources:
+  - slohorizontalscales/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - policy.turbonomic.io
+  resources:
+  - slohorizontalscales/status
+  verbs:
+  - get
+  - patch
+  - update
